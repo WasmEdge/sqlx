@@ -21,11 +21,11 @@ runtime-tokio-native-tls = ["_rt-tokio", "_tls-native-tls", "tokio-native-tls"]
 
 runtime-actix-rustls = ["runtime-tokio-rustls"]
 runtime-async-std-rustls = ["_rt-async-std", "_tls-rustls", "futures-rustls"]
-runtime-tokio-rustls = ["_rt-tokio", "_tls-rustls", "tokio-rustls"]
+runtime-tokio-rustls = ["_rt-tokio"]
 
 # Not used directly and not re-exported from sqlx
 _rt-async-std = ["async-std"]
-_rt-tokio = ["tokio", "once_cell"]
+_rt-tokio = ["tokio_wasi", "once_cell"]
 _tls-native-tls = ["native-tls"]
 _tls-rustls = []
 
@@ -38,7 +38,7 @@ tokio-rustls = { version = "0.23.0", optional = true }
 native-tls = { version = "0.2.4", optional = true }
 once_cell = { version = "1.4", features = ["std"], optional = true }
 
-[dependencies.tokio]
-version = "1.0.1"
-features = ["fs", "net", "rt", "rt-multi-thread", "time", "io-util"]
+[dependencies.tokio_wasi]
+version = "1"
+features = ["fs", "net", "rt", "time", "io-util", "sync"]
 optional = true

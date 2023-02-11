@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+#![allow(dead_code)]
 use proc_macro2::{Span, TokenStream};
 use quote::quote;
 use syn::LitStr;

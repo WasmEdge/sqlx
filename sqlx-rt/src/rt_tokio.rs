@@ -18,7 +18,7 @@ pub use tokio_rustls::{client::TlsStream, TlsConnector};
 
 // lazily initialize a global runtime once for multiple invocations of the macros
 static RUNTIME: Lazy<Runtime> = Lazy::new(|| {
-    runtime::Builder::new_multi_thread()
+    runtime::Builder::new_current_thread()
         .enable_io()
         .enable_time()
         .build()

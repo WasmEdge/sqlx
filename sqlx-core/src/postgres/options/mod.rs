@@ -131,7 +131,8 @@ impl PgConnectOptions {
 
         let host = var("PGHOST").ok().unwrap_or_else(|| default_host(port));
 
-        let username = var("PGUSER").ok().unwrap_or_else(whoami::username);
+        // let username = var("PGUSER").ok().unwrap_or_else(whoami::username);
+        let username = var("PGUSER").ok().unwrap_or_else(|| "postgres".into());
 
         let database = var("PGDATABASE").ok();
 
