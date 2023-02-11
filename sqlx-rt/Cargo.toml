@@ -1,7 +1,7 @@
 [package]
-name = "sqlx-rt"
+name = "sqlx-rt_wasi"
 version = "0.6.2"
-repository = "https://github.com/launchbadge/sqlx"
+repository = "https://github.com/WasmEdge/sqlx"
 license = "MIT OR Apache-2.0"
 description = "Runtime abstraction used by SQLx, the Rust SQL toolkit. Not intended to be used directly."
 edition = "2021"
@@ -9,6 +9,10 @@ authors = [
     "Ryan Leckey <leckey.ryan@gmail.com>",
     "Austin Bonander <austin.bonander@gmail.com>",
 ]
+
+[lib]
+name = "sqlx_rt"
+path = "src/lib.rs"
 
 [features]
 runtime-actix-native-tls = ["runtime-tokio-native-tls"]

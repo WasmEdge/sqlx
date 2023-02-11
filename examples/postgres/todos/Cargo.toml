@@ -7,7 +7,7 @@ workspace = "../../../"
 [dependencies]
 anyhow = "1.0"
 futures = "0.3"
-sqlx = { path = "../../../", features = ["postgres", "runtime-tokio-rustls"] }
+sqlx_wasi = { path = "../../../", features = ["postgres", "runtime-tokio-rustls"] }
 structopt = "0.3"
 tokio_wasi = { version = "1", features = ["macros"]}
 dotenvy = "0.15.0"

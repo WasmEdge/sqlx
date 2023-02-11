@@ -19,11 +19,11 @@ members = [
 ]
 
 [package]
-name = "sqlx"
+name = "sqlx_wasi"
 version = "0.6.2"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/launchbadge/sqlx"
+repository = "https://github.com/WasmEdge/sqlx"
 documentation = "https://docs.rs/sqlx"
 description = "🧰 The Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, and SQLite."
 edition = "2021"
@@ -35,6 +35,10 @@ authors = [
     "Chloe Ross <orangesnowfox@gmail.com>",
     "Daniel Akhterov <akhterovd@gmail.com>",
 ]
+
+[lib]
+name = "sqlx"
+path = "src/lib.rs"
 
 [package.metadata.docs.rs]
 features = ["all", "runtime-tokio-native-tls"]
@@ -125,8 +129,8 @@ bstr = ["sqlx-core/bstr"]
 git2 = ["sqlx-core/git2"]
 
 [dependencies]
-sqlx-core = { version = "0.6.2", path = "sqlx-core", default-features = false }
-sqlx-macros = { version = "0.6.2", path = "sqlx-macros", default-features = false, optional = true }
+sqlx-core = { package="sqlx-core_wasi", version = "0.6.2", path = "sqlx-core", default-features = false }
+sqlx-macros = { package="sqlx-macros_wasi", version = "0.6.2", path = "sqlx-macros", default-features = false, optional = true }
 
 [dev-dependencies]
 # anyhow = "1.0.52"

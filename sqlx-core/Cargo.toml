@@ -1,7 +1,7 @@
 [package]
-name = "sqlx-core"
+name = "sqlx-core_wasi"
 version = "0.6.2"
-repository = "https://github.com/launchbadge/sqlx"
+repository = "https://github.com/WasmEdge/sqlx"
 description = "Core of SQLx, the rust SQL toolkit. Not intended to be used directly."
 license = "MIT OR Apache-2.0"
 edition = "2021"
@@ -11,6 +11,10 @@ authors = [
     "Chloe Ross <orangesnowfox@gmail.com>",
     "Daniel Akhterov <akhterovd@gmail.com>",
 ]
+
+[lib]
+name = "sqlx_core"
+path = "src/lib.rs"
 
 [package.metadata.docs.rs]
 features = ["all-databases", "all-types", "offline", "runtime-tokio-native-tls"]
@@ -106,7 +110,7 @@ offline = ["serde", "either/serde"]
 paste = "1.0.6"
 ahash = "0.7.6"
 atoi = "1.0"
-sqlx-rt = { path = "../sqlx-rt", version = "0.6.2" }
+sqlx-rt = { package = "sqlx-rt_wasi", path = "../sqlx-rt", version = "0.6.2" }
 base64 = { version = "0.13.0", default-features = false, optional = true, features = ["std"] }
 bigdecimal_ = { version = "0.3.0", optional = true, package = "bigdecimal" }
 rust_decimal = { version = "1.19.0", optional = true }
@@ -178,6 +182,6 @@ event-listener = "2.5.2"
 dotenvy = "0.15"
 
 [dev-dependencies]
-sqlx = { version = "0.6.2", path = "..", features = ["postgres", "mysql"] }
+sqlx = { package = "sqlx_wasi", version = "0.6.2", path = "..", features = ["postgres", "mysql"] }
 tokio_wasi = { version = "1", features = ["rt"] }
 
