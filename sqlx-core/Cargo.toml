@@ -182,6 +182,6 @@ event-listener = "2.5.2"
 dotenvy = "0.15"
 
 [dev-dependencies]
-sqlx = { package = "sqlx_wasi", version = "0.6.2", path = "..", features = ["postgres", "mysql"] }
+sqlx = { package = "sqlx_wasi", path = "..", features = ["postgres", "mysql"] }
 tokio_wasi = { version = "1", features = ["rt"] }
 
