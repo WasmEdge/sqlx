@@ -15,6 +15,7 @@ name = "sqlx_rt"
 path = "src/lib.rs"
 
 [features]
+default = ["runtime-tokio-rustls"]
 runtime-actix-native-tls = ["runtime-tokio-native-tls"]
 runtime-async-std-native-tls = [
     "_rt-async-std",
