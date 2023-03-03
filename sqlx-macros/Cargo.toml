@@ -18,7 +18,7 @@ name = "sqlx_macros"
 path = "src/lib.rs"
 
 [features]
-default = ["runtime-tokio-native-tls", "migrate"]
+default = ["runtime-tokio-rustls", "migrate"]
 migrate = ["sha2", "sqlx-core/migrate"]
 
 # runtimes
