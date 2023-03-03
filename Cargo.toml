@@ -45,7 +45,7 @@ features = ["all", "runtime-tokio-native-tls"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-default = ["macros"]
+default = ["macros", "runtime-tokio-rustls"]
 macros = ["sqlx-macros"]
 migrate = ["sqlx-macros/migrate", "sqlx-core/migrate"]
 

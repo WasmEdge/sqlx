@@ -20,7 +20,7 @@ path = "src/lib.rs"
 features = ["all-databases", "all-types", "offline", "runtime-tokio-native-tls"]
 
 [features]
-default = []
+default = ["runtime-tokio-rustls"]
 migrate = ["sha2", "crc"]
 
 # databases
